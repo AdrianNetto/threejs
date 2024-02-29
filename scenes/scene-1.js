@@ -3,9 +3,11 @@ const material = new THREE.MeshLambertMaterial({ color: 0xffffff });
 
 const cube = new THREE.Mesh(geometry, material);
 
-x3.add(cube)
+x3.add(cube);
 
 scene.add(cube);
+
+x3.add(cube, { label: "cube" });
 
 renderer.setAnimationLoop(() => {
   cube.rotation.x += 0.01;

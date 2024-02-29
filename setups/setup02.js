@@ -5,7 +5,13 @@ const options = {
   backgroundColor: 0x222222,
 };
 
-const renderer = new THREE.WebGLRenderer();
+const renderer = new THREE.WebGLRenderer(
+  {
+    antialias: true
+  }
+);
+
+renderer.setPixelRatio(window.devicePixelRatio)
 
 renderer.setSize(options.width, options.height);
 
@@ -29,5 +35,5 @@ const x3 = new THREEx3({
   renderer,
   scene,
 });
-x3.add(camera);
+x3.add(camera, { open: false });
 x3.add(light, { helper: { visible: false } });
